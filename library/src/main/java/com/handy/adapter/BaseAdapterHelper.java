@@ -25,8 +25,6 @@ import android.widget.RadioGroup;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-
 public abstract class BaseAdapterHelper<T> {
     protected SparseArray<View> views;
 
@@ -83,12 +81,6 @@ public abstract class BaseAdapterHelper<T> {
     public T setImageDrawable(int viewId, Drawable drawable) {
         ImageView view = retrieveView(viewId);
         view.setImageDrawable(drawable);
-        return (T) this;
-    }
-
-    public T setImageUrl(int viewId, String imageUrl) {
-        ImageView view = retrieveView(viewId);
-        Glide.with(view.getContext()).load(imageUrl).into(view);
         return (T) this;
     }
 
